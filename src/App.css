@@ -414,11 +414,6 @@
 /*Chat BOX*/
 
 
-
- /* .chatbox-app{
- 
-}  */
-
 /* 
 
 #container {
@@ -448,3 +443,13 @@
   border-right: 1px solid #3f3f3f;
   height: 100%;
 } */
+
+.chatbox-body{
+  display: flex;
+}
+.chatbox-userList{
+  background-color: #61dafb;
+}
+.chatbox-message{
+  background-color: red;
+}
