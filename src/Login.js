@@ -1,8 +1,8 @@
 import React from 'react';
 import Axios from 'axios';
 
-//import loginimg from './images/login-img.jpg';
- import loginimg from 'https://loading.io/s/icon/vajnbx.svg';
+import loginimg from './images/login-img.jpg';
+// import loginimg1 from './images/molecular-background.jpg';
 // import loginimg2 from './images/login-img.jpg';
 
 export default class Login extends React.Component {
@@ -32,10 +32,10 @@ export default class Login extends React.Component {
             Axios.post("http://localhost:8000/user_validate",formdata)
             .then(res=>{console.log(res.statusText)
             result =res.data;
-            
+            this.sendData(username);
             if(result===1){
                 sessionStorage.setItem("loaded",true)
-                this.sendData();
+                
                 this.setState({errormsg:''})
             }
             else
@@ -45,8 +45,8 @@ export default class Login extends React.Component {
             }
         })
     }
-    sendData = () => {
-        this.props.parentCallback("true");
+    sendData = (username) => {
+        this.props.parentCallback("true",username);
         console.log("to_parent")
       }
       handlenewuser(){
